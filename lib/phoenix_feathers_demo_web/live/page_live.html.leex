@@ -1,48 +1,73 @@
-<section class="phx-hero">
-  <h1><%= gettext "Welcome to %{name}!", name: "Phoenix" %></h1>
-  <p>Peace of mind from prototype to production</p>
+<h1 class="header">Components</h1>
 
-  <form phx-change="suggest" phx-submit="search">
-    <input type="text" name="q" value="<%= @query %>" placeholder="Live dependency search" list="results" autocomplete="off"/>
-    <datalist id="results">
-      <%= for {app, _vsn} <- @results do %>
-        <option value="<%= app %>"><%= app %></option>
-      <% end %>
-    </datalist>
-    <button type="submit" phx-disable-with="Searching...">Go to Hexdocs</button>
-  </form>
-</section>
+<div class="section">
+  <h2>Card</h2>
+  <%= live_component @socket, PhoenixFeathers.Card do %>
+    <h3>This is a Card</h3>
+    <p>You can put anything you want in here.</p>
 
-<section class="row">
-  <article class="column">
-    <h2>Resources</h2>
-    <ul>
-      <li>
-        <a href="https://hexdocs.pm/phoenix/overview.html">Guides &amp; Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix/blob/v1.5/CHANGELOG.md">v1.5 Changelog</a>
-      </li>
-    </ul>
-  </article>
-  <article class="column">
-    <h2>Help</h2>
-    <ul>
-      <li>
-        <a href="https://elixirforum.com/c/phoenix-forum">Forum</a>
-      </li>
-      <li>
-        <a href="https://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on Freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">Twitter @elixirphoenix</a>
-      </li>
-      <li>
-        <a href="https://elixir-slackin.herokuapp.com/">Elixir on Slack</a>
-      </li>
-    </ul>
-  </article>
-</section>
+    <%= live_component @socket, PhoenixFeathers.Card do %>
+      <div>Even another card.</div>
+    <% end %>
+  <% end %>
+
+  <div class="section">
+    Card styles can be overwritten using the CSS class <code>.phx_feathers_card</code>.
+  </div>
+  <pre>
+    <code>
+      .phx_feathers_card {
+      }
+    </code>
+  </pre>
+</div>
+
+<hr>
+
+<div class="section">
+  <h2>Button</h2>
+  <%= live_component @socket, PhoenixFeathers.Button, display_text: "Click me" %>
+
+  <div class="section">
+    Button styles can be overwritten using the CSS class <code>.phx_feathers_button</code>.
+  </div>
+  <pre>
+    <code>
+      .phx_feathers_button {
+      }
+    </code>
+  </pre>
+</div>
+
+<hr>
+
+<div class="section">
+  <h2>Icons</h2>
+
+  <div class="section">
+    Icon styles can be overwritten using the CSS class <code>.phx_feathers_icon</code>.
+  </div>
+  <pre>
+    <code>
+      .phx_feathers_icon {
+      }
+    </code>
+  </pre>
+
+  <code>%PhoenixFeathers.Icon{name: :cheveron_left, color: "#222"}</code>
+  <div>
+    <%= Icon.render(@socket.assigns, %Icon{name: :cheveron_left, color: @icon_color}) %>
+  </div>
+
+  <code>%PhoenixFeathers.Icon{name: :cheveron_right, color: "#222"}</code>
+  <div>
+    <%= Icon.render(@socket.assigns, %Icon{name: :cheveron_right, color: @icon_color}) %>
+  </div>
+
+  <code>%PhoenixFeathers.Icon{name: :menu, color: "#222"}</code>
+  <div>
+    <%= Icon.render(@socket.assigns, %Icon{name: :menu, color: @icon_color}) %>
+  </div>
+</div>
+
+<hr>

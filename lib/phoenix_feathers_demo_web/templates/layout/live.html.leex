@@ -1,3 +1,29 @@
+<%= live_component @socket,
+  PhoenixFeathers.TopNav,
+  home: %{
+    url: "/",
+    title: "Phoenix Feathers Demo",
+    logo_src: Routes.static_path(@socket, "/images/phoenix-feathers.svg")
+  },
+  nav_items: [
+    %{url: "https://hex.pm/packages/phoenix_feathers", text: "Hex Package"},
+    %{url: "https://hexdocs.pm/phoenix_feathers", text: "Docs"},
+    %{url: "https://github.com/timpile/phoenix_feathers", text: "Github"},
+    %{url: "#", text: "Link 1"},
+    %{url: "#", text: "Link 2"}
+  ]
+%>
+
+<%= live_component @socket,
+    PhoenixFeathers.SideBar,
+    id: "phoenix_feathers_side_bar",
+    is_open: false,
+    open_icon: %PhoenixFeathers.Icon{name: :menu, color: "#fff"},
+    close_icon: %PhoenixFeathers.Icon{name: :cheveron_left, color: "#fff"}
+  do %>
+  <h2>Side Bar</h2>
+<% end %>
+
 <main role="main" class="container">
   <p class="alert alert-info" role="alert"
     phx-click="lv:clear-flash"
@@ -6,6 +32,5 @@
   <p class="alert alert-danger" role="alert"
     phx-click="lv:clear-flash"
     phx-value-key="error"><%= live_flash(@flash, :error) %></p>
-
   <%= @inner_content %>
 </main>
