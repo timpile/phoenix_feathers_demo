@@ -79,7 +79,7 @@ release_local:
 .PHONEY: release_up
 release_up:
 	@source .env \
-	&& MIX_ENV=prod APP_NAME=phoenix_feathers_demo_app PORT=4000 _build/prod/rel/phoenix_feathers_demo_app/bin/phoenix_feathers_demo_app start
+	&& MIX_ENV=prod APP_NAME=phoenix-feathers-demo PORT=4000 _build/prod/rel/phoenix_feathers_demo/bin/phoenix_feathers_demo start
 
 
 .PHONEY: release_prod
@@ -93,7 +93,7 @@ release_prod:
 .PHONEY: deploy_prod
 deploy_prod:
 	@git push gigalixir master \
-	&& gigalixir ps -a phoenix_feathers_demo
+	&& gigalixir ps -a phoenix-feathers-demo
 
 
 .PHONEY: build_and_deploy_prod
@@ -115,7 +115,7 @@ prod_iex:
 
 .PHONEY: prod_logs
 prod_logs:
-	@gigalixir logs -a phoenix_feathers_demo
+	@gigalixir logs -a phoenix-feathers-demo
 
 
 .PHONEY: prod_migrate
