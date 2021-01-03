@@ -93,5 +93,35 @@
   margin-top: 32px;
 }
 .header {
-  margin-top: 100px;
+  margin-top: 64px;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  position: relative;
+  padding-bottom: 350px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  max-height: 350px;
+  height: 100%;
+  width: 100%;
+  background-color: #222;
+  color: #fff;
+  padding: 32px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > .footer-content {
+    margin-top: 32px;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
 }

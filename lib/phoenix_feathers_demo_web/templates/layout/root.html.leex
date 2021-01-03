@@ -5,11 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <%= csrf_meta_tag() %>
-    <%= live_title_tag assigns[:page_title] || "Phoenix Feathers Demo", suffix: " · Phoenix Framework" %>
+    <%= live_title_tag assigns[:page_title] || "Phoenix Feathers" %>
     <link phx-track-static rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
     <script defer phx-track-static type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </head>
   <body>
     <%= @inner_content %>
+
+    <footer>
+      Phoenix Feathers is created & maintained by Tim Pile
+      <div class="row footer-content">
+        <div class="column">
+          <h4>Contact</h4>
+        </div>
+        <div class="column">
+          <h4>Project Links</h4>
+          <div>
+            <a href="https://hexdocs.pm/phoenix_feathers">Online Docs</a>
+          </div>
+          <div>
+            <a href="https://github.com/timpile/phoenix_feathers">Github Repo</a>
+          </div>
+          <div>
+            <a href="https://hex.pm/packages/phoenix_feathers">Hex Package</a>
+          </div>
+        </div>
+        <div class="column">
+          <h4>Resources</h4>
+          <div>
+            <a href="https://www.phoenixframework.org/">Phoenix Framework</a>
+          </div>
+          <div>
+            <a href="https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html">Phoenix LiveView</a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

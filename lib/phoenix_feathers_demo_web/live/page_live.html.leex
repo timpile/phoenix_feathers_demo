@@ -1,73 +1,57 @@
-<h1 class="header">Components</h1>
+<div class="row">
+  <div class="column">
+    <h1 class="header">Phoenix Feathers</h1>
+    <h2><small>v1.0.1-alpha</small></h2>
+    <div class="subheader">A UI component library built for Phoenix LiveView.</div>
 
-<div class="section">
-  <h2>Card</h2>
-  <%= live_component @socket, PhoenixFeathers.Card do %>
-    <h3>This is a Card</h3>
-    <p>You can put anything you want in here.</p>
+    <div class="section">
+      <%= link "Component Library Demo", to: Routes.components_path(PhoenixFeathersDemoWeb.Endpoint, :components) %>
+    </div>
 
-    <%= live_component @socket, PhoenixFeathers.Card do %>
-      <div>Even another card.</div>
-    <% end %>
-  <% end %>
-
-  <div class="section">
-    Card styles can be overwritten using the CSS class <code>.phx_feathers_card</code>.
   </div>
-  <pre>
-    <code>
-      .phx_feathers_card {
-      }
-    </code>
-  </pre>
+  <div class="column">
+    <img src="<%= Routes.static_path(@socket, "/images/phoenix-feathers.svg") %>">
+  </div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="column">
+    <p>
+      <b><em>Thanks for visiting!</em></b>
+      <div>
+        This project is still in early development, so constructive feedback is welcome.
+      </div>
+    </p>
+  </div>
+  <div class="column">
+    <div id="tripetto"></div>
+    <script src="https://unpkg.com/tripetto-runner-foundation"></script>
+    <script src="https://unpkg.com/tripetto-runner-classic"></script>
+    <script src="https://unpkg.com/tripetto-services"></script>
+    <script>
+    var tripetto = TripettoServices.init({ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNklnbU5WTklGUW9GUFIyRnFaRUMyZFhNY2hyQ0Njcmcvb1J4SVk0dmhjZz0iLCJkZWZpbml0aW9uIjoiem0wamI1K2M1b081WnZxbTNQNUhvbjNKb3FEMUlEZHV3QklGVklJWVJQST0iLCJ0eXBlIjoiY29sbGVjdCJ9.1AK_HpR1UmAFEj-0uUX67MWuoaQdg_jBFs77kspcfeA" });
+
+    TripettoClassic.run({
+        element: document.getElementById("tripetto"),
+        definition: tripetto.definition,
+        styles: tripetto.styles,
+        l10n: tripetto.l10n,
+        locale: tripetto.locale,
+        translations: tripetto.translations,
+        attachments: tripetto.attachments,
+        onSubmit: tripetto.onSubmit
+    });
+    </script>
+  </div>
 </div>
 
 <hr>
 
 <div class="section">
-  <h2>Button</h2>
-  <%= live_component @socket, PhoenixFeathers.Button, display_text: "Click me" %>
-
-  <div class="section">
-    Button styles can be overwritten using the CSS class <code>.phx_feathers_button</code>.
-  </div>
-  <pre>
-    <code>
-      .phx_feathers_button {
-      }
-    </code>
-  </pre>
-</div>
-
-<hr>
-
-<div class="section">
-  <h2>Icons</h2>
-
-  <div class="section">
-    Icon styles can be overwritten using the CSS class <code>.phx_feathers_icon</code>.
-  </div>
-  <pre>
-    <code>
-      .phx_feathers_icon {
-      }
-    </code>
-  </pre>
-
-  <code>%PhoenixFeathers.Icon{name: :cheveron_left, color: "#222"}</code>
-  <div>
-    <%= Icon.render(@socket.assigns, %Icon{name: :cheveron_left, color: @icon_color}) %>
-  </div>
-
-  <code>%PhoenixFeathers.Icon{name: :cheveron_right, color: "#222"}</code>
-  <div>
-    <%= Icon.render(@socket.assigns, %Icon{name: :cheveron_right, color: @icon_color}) %>
-  </div>
-
-  <code>%PhoenixFeathers.Icon{name: :menu, color: "#222"}</code>
-  <div>
-    <%= Icon.render(@socket.assigns, %Icon{name: :menu, color: @icon_color}) %>
-  </div>
+  <h2>Roadmap</h2>
+  <em>TBD</em>
 </div>
 
 <hr>

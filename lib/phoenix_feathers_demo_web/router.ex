@@ -18,6 +18,7 @@ defmodule PhoenixFeathersDemoWeb.Router do
     pipe_through :browser
 
     live "/", PageLive, :index
+    live "/components", ComponentsLive, :components
   end
 
   # Other scopes may use custom stacks.
