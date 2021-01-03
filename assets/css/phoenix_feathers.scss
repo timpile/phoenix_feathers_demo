@@ -127,9 +127,11 @@ nav.phx_feathers_top_nav {
       flex-direction: row;
       list-style-type: none;
       margin: 0;
+      background-color: #222;
       > li {
         margin: 0;
         margin-left: 16px;
+        background-color: #222;
         > a {
           color: #fff;
           border-bottom: 2px solid transparent;
@@ -191,7 +193,6 @@ nav.phx_feathers_top_nav {
         display: flex;
         flex-direction: column;
         width: 100%;
-        background-color: #111;
         padding: 24px;
         > li {
           padding: 12px 0;
