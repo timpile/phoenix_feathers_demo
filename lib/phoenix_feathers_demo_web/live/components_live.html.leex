@@ -57,6 +57,82 @@
 <hr>
 
 <div class="section">
+  <h2>Tool Tips</h2>
+
+  <div>
+    Hover over a box to view each tool tip position.
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <div class="row">
+        <%= live_component @socket, PhoenixFeathers.ToolTip,
+            text: "Top Left",
+            position: :top_left,
+            classes: "box"
+          do %>
+          Top Left
+        <% end %>
+
+        <%= live_component @socket, PhoenixFeathers.ToolTip,
+            text: "Top Right",
+            position: :top_right,
+            classes: "box"
+          do %>
+          Top Right
+        <% end %>
+      </div>
+      <div class="row">
+        <%= live_component @socket, PhoenixFeathers.ToolTip,
+            text: "Left",
+            position: :left,
+            classes: "box"
+          do %>
+          Left
+        <% end %>
+
+        <%= live_component @socket, PhoenixFeathers.ToolTip,
+            text: "Right",
+            position: :right,
+            classes: "box"
+          do %>
+          Right
+        <% end %>
+      </div>
+      <div class="row">
+        <%= live_component @socket, PhoenixFeathers.ToolTip,
+            text: "Bottom Left",
+            position: :bottom_left,
+            classes: "box"
+          do %>
+          Bottom Left
+        <% end %>
+
+        <%= live_component @socket, PhoenixFeathers.ToolTip,
+            text: "Bottom Right",
+            position: :bottom_right,
+            classes: "box"
+          do %>
+          Bottom Right
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    Tool tip styles can be overwritten using the CSS class <code>.phx_feathers_tool_tip</code>.
+  </div>
+  <pre>
+    <code>
+      .phx_feathers_tool_tip {
+      }
+    </code>
+  </pre>
+</div>
+
+<hr>
+
+<div class="section">
   <h2>Icons</h2>
 
   <div class="section">

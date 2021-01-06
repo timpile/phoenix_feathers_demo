@@ -125,3 +125,12 @@ footer {
     justify-content: space-evenly;
   }
 }
+
+.box {
+  border: 1px solid #222;
+  max-width: 200px;
+  width: 100%;
+  max-height: 200px;
+  height: 100%;
+  padding: 16px;
+}

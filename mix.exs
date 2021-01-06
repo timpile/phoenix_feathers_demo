@@ -47,7 +47,7 @@ defmodule PhoenixFeathersDemo.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:phoenix_feathers, "~> 1.0.1-alpha"}
+      {:phoenix_feathers, "~> 1.1.0-alpha"}
     ]
   end
 
