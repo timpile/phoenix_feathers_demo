@@ -36,3 +36,4 @@ npm-debug.log
 .prod.env
 .env
 TODO.md
+.elixir_ls
